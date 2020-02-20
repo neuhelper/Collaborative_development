@@ -6,11 +6,59 @@
              mc:Ignorable="d"
              x:Class="HelloWorld.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="测试分支开发操作!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <Grid>
+        <ScrollView>
+            <!--这是网格布局的实例-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
 
+                <Label  Grid.Row="0"
+                        Grid.Column="0"
+                        Text="Grid:"
+                        Margin="8"></Label>
+
+                <Grid Grid.Row="0"
+                      Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="ACME Sales Corp"
+                           FontSize="24"
+                           Grid.Row="0"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="2"
+                           Margin="4">
+                    </Label>
+
+                    <Label  Text="FullName"
+                            Grid.Row="1"
+                            Grid.Column="0" 
+                            VerticalTextAlignment="Center"></Label>
+
+                    <Entry Grid.Column="1"
+                           Grid.Row="1"></Entry>
+
+                    <Button Grid.Row="2"
+                            Grid.Column="1"
+                            Margin="4"
+                            Text="Save"></Button>
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </Grid>
 </ContentPage>
