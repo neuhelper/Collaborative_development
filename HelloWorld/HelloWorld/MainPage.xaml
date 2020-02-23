@@ -16,8 +16,10 @@
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-
+        <!--     Grid标签      -->
                 <Label  Grid.Row="0"
                         Grid.Column="0"
                         Text="Grid:"
@@ -58,6 +60,23 @@
                             Margin="4"
                             Text="Save"></Button>
                 </Grid>
+        <!--     Stack标签      -->
+                <Label Text="StackLayout"
+                       Grid.Column="0"
+                       Grid.Row="1"
+                       Margin="8"
+                       />
+                <Button x:Name="CallWebServiceButton"
+                        Text="连接网络"
+                        Clicked="CallWebServiceButton_Clicked"
+                        Grid.Column="1"
+                        Grid.Row="1"></Button>
+         <!--      今日诗词         -->
+                <Label x:Name="ResultLabel"
+                       Grid.Row="3"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       Margin="8"></Label>
             </Grid>
         </ScrollView>
     </Grid>
