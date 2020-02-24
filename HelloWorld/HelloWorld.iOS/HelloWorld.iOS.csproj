@@ -132,4 +132,7 @@
       <Name>HelloWorld</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\image.jpg" />
+  </ItemGroup>
 </Project>

@@ -9,7 +9,7 @@
     <Grid>
         <ScrollView>
             <!--这是网格布局的实例-->
-            <Grid>
+            <Grid>      <!-- 下面创建了一个2列 9行的网格-->
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
@@ -18,13 +18,21 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-        <!--     Grid标签      -->
+        <!--     Grid标签    
+                是网格布局的一个控件，用来分割可用的空间
+                通过Row和Column属性来将另外的控件置于网格中
+                从0开始计数。-->
                 <Label  Grid.Row="0"
                         Grid.Column="0"
                         Text="Grid:"
                         Margin="8"></Label>
-
                 <Grid Grid.Row="0"
                       Grid.Column="1">
                     <Grid.RowDefinitions>
@@ -60,8 +68,10 @@
                             Margin="4"
                             Text="Save"></Button>
                 </Grid>
-        <!--     Stack标签      -->
-                <Label Text="StackLayout"
+        <!--     WebService  
+                 访问网络，需要引入系统库
+                -->
+                <Label Text="WebService"
                        Grid.Column="0"
                        Grid.Row="1"
                        Margin="8"
@@ -71,13 +81,55 @@
                         Clicked="CallWebServiceButton_Clicked"
                         Grid.Column="1"
                         Grid.Row="1"></Button>
-         <!--      今日诗词         -->
+         <!--      今日诗词，需要添加JSON依赖包         -->
                 <Label x:Name="ResultLabel"
                        Grid.Row="3"
                        Grid.Column="0"
                        Grid.ColumnSpan="2"
                        Margin="8"></Label>
+         <!--     StackLayout
+                线性布局控件，Orientation属性用来控制垂直或者水平方向
+                -->
+                <Label Text="StackLayout"
+                       Grid.Column="0"
+                       Grid.Row="4"
+                       Margin="8"></Label>
+                <StackLayout Grid.Row="4"
+                      Grid.Column="1"
+                      Orientation="Horizontal"
+                      Spacing="0"  >
+                    <BoxView Color="Blue"
+                             WidthRequest="50"
+                             HeightRequest="50"/>
+
+                    <StackLayout Spacing="0">
+                        <BoxView Color="Red"
+                             WidthRequest="50"
+                             HeightRequest="25"
+                             />
+                        <BoxView Color="Yellow"
+                             HeightRequest="25"
+                             WidthRequest="50"/>
+                    </StackLayout>
+                </StackLayout>
+                <!--      ScrollView 
+                滚动视图控件 -->
+    <Label Text="ScrollView"
+                       Grid.Row="5"
+                       Grid.Column="0"
+                       Margin="8" />
+    <ScrollView Grid.Row="5"
+                            Grid.Column="1"
+                            HeightRequest="75"
+                            WidthRequest="200">
+        <Image Source="image.jpg"></Image>
+    </ScrollView>
             </Grid>
         </ScrollView>
     </Grid>
 </ContentPage>
+<!--
+             
+
+
+    -->
